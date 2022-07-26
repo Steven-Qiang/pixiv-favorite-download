@@ -1,0 +1,16 @@
+{
+  "name": "pixiv-favorite-download",
+  "description": "Pixiv收藏图片下载",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiangmouren/pixiv-favorite-download"
+  },
+  "author": {
+    "name": "qiangmouren",
+    "email": "git@qiangmou.ren"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "p-queue": "6.6.2"
+  }
+}
