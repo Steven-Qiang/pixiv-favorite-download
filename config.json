@@ -1,0 +1,15 @@
+{
+    "cookie": "这里填写cookie",
+    "output": "./download",
+    "proxy": {
+        "$mark": "如果不使用代理host请留空",
+        "host": null,
+        "port": null,
+        "protocol": null,
+        "auth": {
+            "$mark": "代理认证",
+            "username": null,
+            "password": null
+        }
+    }
+}

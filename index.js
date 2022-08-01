@@ -5,7 +5,7 @@
  * @create: 2021-12-29 12:52:26
  * @author: qiangmouren (2962051004@qq.com)
  * -----
- * @last-modified: 2022-07-26 02:49:52
+ * @last-modified: 2022-08-01 03:08:09
  * -----
  */
 
@@ -16,18 +16,19 @@ const queue_02 = new Queue({ concurrency: 3 }); // 下载队列
 
 const fs = require('fs');
 const path = require('path');
+const config = require('./config.json');
 
 let instance;
-const output = path.resolve('download'); // spell-checker: disable-next-line
-const cookie = '请填写Cookie';
-
+const output = path.resolve(config.output);
+const proxy = config.proxy?.host ? config.proxy : null;
 
 (async () => {
   if (!fs.existsSync(output)) await fs.promises.mkdir(output);
   instance = axios.create({
     validateStatus: false,
+    proxy,
     headers: {
-      cookie,
+      cookie: config.cookie,
       referer: 'https://www.pixiv.net/',
       'user-agent':
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36',
